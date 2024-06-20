@@ -1,0 +1,5 @@
+20/06/2024 04:55:08 PM - INFO: Logging initialized: ./ela.log
+20/06/2024 04:55:44 PM - INFO: Logging initialized: ./ela.log
+20/06/2024 04:55:58 PM - INFO: Logging initialized: ./ela.log
+20/06/2024 04:55:58 PM - INFO: Initializing NLP model. Loading en_core_web_trf
+20/06/2024 04:56:01 PM - INFO: Model loaded
