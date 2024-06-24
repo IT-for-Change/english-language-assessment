@@ -22,11 +22,10 @@ class ELATimezoneFormatter(Formatter):
 print(f'Initializing logging: {ELA_LOG_FILE}')
 file_size_bytes = 500 * 1024  # Set the maximum file size (in bytes) before rotation
 backup_count = 10  # Set the number of backup files to keep
-    
-logDir = ELA_LOG_DIR
+
 logfile = os.path.join(ELA_LOG_DIR, ELA_LOG_FILE)
-if (os.path.exists(logDir) == False):
-    Path(logDir).mkdir(parents=True)
+if (os.path.exists(ELA_LOG_DIR) == False):
+    Path(ELA_LOG_DIR).mkdir(parents=True)
 
 rotating_file_handler = RotatingFileHandler(logfile,maxBytes=file_size_bytes,backupCount=backup_count)
 formatter = ELATimezoneFormatter('%(asctime)s - %(levelname)s: %(message)s',\
@@ -49,11 +48,11 @@ logging.getLogger('watchdog.observers.inotify_buffer').setLevel(logging.INFO)
 
 logging.info(f'Logging initialized: {logfile}')
 
-def log_info(message):
+def info(message):
     logging.info(message)
 
-def log_debug(message):
+def debug(message):
     logging.debug(message)
 
-def log_error(message):
+def error(message):
     logging.error(message)
