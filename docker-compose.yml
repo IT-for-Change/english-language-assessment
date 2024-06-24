@@ -10,9 +10,12 @@ services:
         GID: ${ELA_HOST_GID}
     environment:
       - ELA_DATA_DIR=${ELA_USER_HOME}/host/files/data
+      - ELA_TRIGGER_DIR=${ELA_USER_HOME}/host/files/id
+      - ELA_TRIGGER_FILE=ela-package.id
       - ELA_LOG_DIR=${ELA_USER_HOME}/host/files/log
       - ELA_LOG_LEVEL=DEBUG
-      - ELA_ASR_MODEL=${ELA_USER_HOME}/host/files/models/whisper/medium.en.pt
+      - PKG_UPLOAD_BASE_DIR=${ELA_USER_HOME}/host/files/uploads
+      - ELA_ASR_MODEL=${ELA_USER_HOME}/host/files/models/whisper/small.en.pt
       - ELA_ASR_INFERENCE_DEVICE=cpu
       - ELA_NLP_MODEL=en_core_web_trf
       - ELA_LOCALDB_DIR=${ELA_USER_HOME}/host/files/db
@@ -24,4 +27,4 @@ services:
     tty: true
     stdin_open: true
     #command: sh -c "${ELA_APP_BASE}/venv/bin/python ${ELA_APP_BASE}/ela/app.py"
-    #command: sh -c "python ${ELA_USER_HOME}/host/app.py"
+    command: sh -c "python ${ELA_USER_HOME}/host/app.py"
