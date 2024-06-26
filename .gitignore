@@ -1,6 +1,7 @@
 # Ignore the files/data directory
 files/data/
-files/log
+files/log/
+files/models/
 
 # Ignore Python package cache files under elautil directory
 elautil/__pycache__/
