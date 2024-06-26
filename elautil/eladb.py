@@ -44,7 +44,7 @@ class ELADB:
                     logger.info(f"id {speech_item_id} already exists. Skipping")
                     return True
                 else:
-                    return True
+                    return False
         except sqlite3.DatabaseError as e:
             print(f"Database error: {e}")
             return False

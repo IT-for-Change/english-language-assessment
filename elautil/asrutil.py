@@ -55,7 +55,7 @@ def asr_process(audio_file):
     asr_text_timings = str(all_words)
     return asr_text, asr_text_timings
 
-def process_speech_item(speech_item):
+def process_single_speech_item(speech_item):
     audio_file = speech_item.get_audio_file_path()
     logger.info("{}|{}".format(speech_item.get_speech_item_id(),"Performing ASR"))
     asr_text, asr_text_timings = asr_process(audio_file)
@@ -84,9 +84,8 @@ def process_speech_items(school_code,speech_items,generate_new_db=False,export_t
             item_exists_in_db = False
         else:
             item_exists_in_db = db.check_speech_item_exists(speech_item.get_speech_item_id())
-        
         if (item_exists_in_db == False):
-            processed_speech_item = process_speech_item(speech_item)
+            processed_speech_item = process_single_speech_item(speech_item)
             db.insert_processed_speech_item(processed_speech_item)
     
     if (export_to_csv):
