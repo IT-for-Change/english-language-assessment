@@ -71,7 +71,7 @@ def process_speech_item(speech_item):
     )
     return processed_speech_item
 
-def process_speech_items(school_code,speech_items,generate_new_db=False):
+def process_speech_items(school_code,speech_items,generate_new_db=False,export_to_csv=False):
     db_file = ''
     if (generate_new_db):
         db_file = file_tools.get_new_school_db_file(school_code)
@@ -82,8 +82,17 @@ def process_speech_items(school_code,speech_items,generate_new_db=False):
         item_exists_in_db = False
         if (generate_new_db):
             item_exists_in_db = False
-        item_exists = db.check_speech_item_exists(speech_item.get_speech_item_id())
-        if (item_exists == False):
+        else:
+            item_exists_in_db = db.check_speech_item_exists(speech_item.get_speech_item_id())
+        
+        if (item_exists_in_db == False):
             processed_speech_item = process_speech_item(speech_item)
             db.insert_processed_speech_item(processed_speech_item)
+    
+    if (export_to_csv):
+        csv_file = file_tools.generate_csv_filename_by_timestamp(school_code)
+        csv_dir = file_tools.get_school_data_dir(school_code)
+        logger.info('Exporting to {}/{}'.format(csv_dir,csv_file))
+        db.export_csv(csv_dir,csv_file)
+        logger.info('Export complete')
     return
