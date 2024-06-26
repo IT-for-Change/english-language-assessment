@@ -3,7 +3,7 @@ import os
 #defaults for local testing
 os.environ['ELA_DATA_DIR'] = 'files/data'
 os.environ['ELA_LOG_DIR'] = 'files/log'
-os.environ['ELA_ASR_MODEL'] = 'files/models/whisper/small.en.pt'
+os.environ['ELA_ASR_MODEL'] = 'files/models/whisper/medium.en.pt'
 os.environ['ELA_ASR_INFERENCE_DEVICE'] = 'cpu'
 os.environ['ELA_NLP_MODEL'] = 'en_core_web_trf'
 os.environ['ECUBE_PKG_AUDIO_DIR'] = 'data/audio'
