@@ -3,26 +3,21 @@ import os
 #defaults for local testing
 os.environ['ELA_DATA_DIR'] = 'files/data'
 os.environ['ELA_LOG_DIR'] = 'files/log'
-os.environ['ELA_TRIGGER_DIR'] = '.'
-os.environ['ELA_TRIGGER_FILE'] = '.trigger'
 os.environ['ELA_ASR_MODEL'] = 'files/models/whisper/small.en.pt'
 os.environ['ELA_ASR_INFERENCE_DEVICE'] = 'cpu'
 os.environ['ELA_NLP_MODEL'] = 'en_core_web_trf'
 os.environ['ECUBE_PKG_AUDIO_DIR'] = 'data/audio'
-os.environ['ELA_LOCALDB_DIR'] = 'files/data/ela'
 os.environ['ELA_SERVER_TIMEZONE'] = 'Asia/Kolkata'
-os.environ['ELA_AUDIO_SOURCE'] = 'ECUBE' #CAN BE ODK ALSO
+os.environ['ELA_AUDIO_SOURCE'] = 'ECUBE' #OTHER POSSIBLE VALUE(S): 'ODK'
 
 
 #mandatory variables
 ELA_DATA_DIR = os.environ['ELA_DATA_DIR']
 ELA_LOG_DIR = os.environ['ELA_LOG_DIR']
-ELA_TRIGGER_DIR = os.environ['ELA_TRIGGER_DIR']
-ELA_TRIGGER_FILE = os.environ['ELA_TRIGGER_FILE']
 ELA_ASR_MODEL = os.environ['ELA_ASR_MODEL']
 ELA_ASR_INFERENCE_DEVICE = os.environ['ELA_ASR_INFERENCE_DEVICE'] 
 ELA_NLP_MODEL = os.environ['ELA_NLP_MODEL']
-ELA_LOCALDB_DIR = os.environ['ELA_LOCALDB_DIR']
+ECUBE_PKG_AUDIO_DIR = os.environ['ECUBE_PKG_AUDIO_DIR']
 ELA_SERVER_TIMEZONE = os.environ['ELA_SERVER_TIMEZONE']
 ELA_AUDIO_SOURCE = os.environ['ELA_AUDIO_SOURCE']
 
