@@ -26,11 +26,13 @@ entity TextItem {
     learner_id : string
     package_id : string
     asr_text : string
+    attempt_number: int
     lang : string
     creation_time: string
 }
 
 entity ProcessedTextItem {
+    id: string
     activity_id : string
     learner_id : string
     package_id : string
@@ -38,14 +40,14 @@ entity ProcessedTextItem {
     total_words: int
     content_words: int
     descriptive_words: int
+    unique_words: int
     long_words: json_string
     noun_phrases: json_string
     svo_triples: json_string
-    sv_doubles: json_string
+    sp_pairs: json_string
     lang: string
     creation_time: string
 }
-
 
 
 
