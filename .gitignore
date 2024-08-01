@@ -6,3 +6,6 @@ files/models/
 # Ignore Python package cache files under elautil directory
 elautil/__pycache__/
 
+TODO.txt
+elautil/__pycache__/config.cpython-310.pyc
+elautil/__pycache__/logger.cpython-310.pyc
